@@ -1,0 +1,22 @@
+{
+  "name": "snow-clan-monitor",
+  "version": "2.1.0",
+  "private": true,
+  "description": "SNOW Clan and Arena membership monitor",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=22.12.0 <25"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env src/index.js",
+    "test": "node --test test/*.test.js",
+    "check": "node scripts/check.js",
+    "setup:reader": "node --env-file-if-exists=.env scripts/reader-runtime.mjs setup",
+    "check:reader": "node --env-file-if-exists=.env scripts/reader-runtime.mjs check",
+    "test:reader": "node --env-file-if-exists=.env scripts/reader-runtime.mjs test"
+  },
+  "dependencies": {
+    "discord.js": "14.27.0",
+    "mongodb": "^6.21.0"
+  }
+}

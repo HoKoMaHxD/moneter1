@@ -1,0 +1,19 @@
+services:
+  - type: worker
+    name: snow-clan-monitor
+    runtime: node
+    buildCommand: npm ci --omit=dev --ignore-scripts && npm run setup:reader
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 22.22.0
+      - key: DISCORD_BOT_TOKEN
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: ENCRYPTION_KEY
+        sync: false
+      - key: MONGODB_DB
+        value: snow_clan_monitor
+      - key: READER_TOKEN
+        sync: false
